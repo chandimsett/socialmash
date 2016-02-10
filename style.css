@@ -1,0 +1,225 @@
+@import url(fonts/raleway.chs);
+ul#list-nav {
+  list-style:none;
+  margin:20px;
+  padding:0;
+  width:525px
+}
+
+ul#list-nav li {
+  display:inline
+}
+
+ul#list-nav li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:100px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+
+ .follow
+{
+background-color:white; 
+color:black;
+border-style: solid;
+border-color:black;
+border-width: 3px;
+
+font-size:14px; 
+padding-left:10px;
+padding-top:5px;
+padding-bottom:5px;
+display:inline-block;
+position:absolute;
+margin-left:200px;
+font-family: raleway;
+padding-right:10px; 
+-moz-border-radius:40px 40px 40px 40px;  // rounds corners for firefox
+border-radius:40px 40px 40px 40px;  //rounds corners for other browsers
+}
+.follow:hover
+{
+color:black;
+border-style: dotted;
+border-color:black;
+border-width: 3px;
+background-color:#E6E6B8;
+cursor: pointer;
+}
+.profileinfo
+{
+font-family: 'raleway', serif;
+color:white;
+padding:10px;
+margin:5px;
+//background-color: #bd1818;
+background-color: #408080;
+display: inline-block;
+-webkit-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+
+}
+.infohead{
+	text-decoration: underline;
+}
+.infoitem{
+	padding-left: 15px;
+	
+}
+body{
+ font-family: 'raleway', serif;
+// background-image: url("images/trianglify-background (2).svg");
+//background-color: #3399FF;
+background-color: white;
+font-size: 18px;
+color:black;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+.postcontainer
+{
+float:right;
+background-colour: teal;
+margin-right:20%;
+position:relative;
+}
+small { 
+    font-size: smaller;
+}
+.upvote_simplepost, .downvote_simplepost, .upvote_simplecomment, .downvote_simplecomment{cursor: pointer;}
+.simplepost
+{
+margin:10px;
+width:500px;
+float:left;
+background-color: teal;
+padding:10px;
+color:white;
+display: inline-block;
+-webkit-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+}
+a:link {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a:visited {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+	color: #E1DEDE;
+}
+a:active {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+input[type="text"] {
+opacity:0.8;
+}
+#sendername {
+	text-decoration: underline;
+}
+.following, .followers, .friends {
+font-family: 'raleway', serif;
+color:white;
+float:left;
+margin:5px;
+padding:10px;
+background-color: green;
+//background-color: orange;
+display: inline-block;
+-webkit-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+}
+ #searchresults{
+background: #408080;
+opacity:0.8;
+position:relative;
+padding: 5px;
+display:block;
+position:relative;
+z-index:500px;
+
+display:inline-box;
+-webkit-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75);
+}
+#searchresults:hover {
+opacity:1;
+}
+
+.profile-container{
+margin-left:30%;
+}
+textarea{
+    opacity:0.8;
+    resize:none;
+    width:480px;
+    max-width: 480px; 
+    max-height: 40px;
+}
+.comment
+{
+	border-style: solid;
+	border-color:white;
+	border-width: 1px;
+	padding:10px;
+}
+
+.comments{
+max-height:400px;
+overflow-y:auto;
+}
+.profilethumb{
+float:left;
+}
+.statusupdate{
+float:left;
+width:500px;
+margin:10px;
+position:relative;
+background-color: teal;
+padding:10px;
+color:white;
+display: inline-block;
+-webkit-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+box-shadow: 10px -11px 34px -6px rgba(0,0,0,0.75);
+}
+.notificationpanel,.messagesnotificationpanel{
+max-height:500px;
+width:300px;
+}
+
+.notificationpanel a:link, .notificationpanel a:visited{
+color:black;
+}
+.chatwindow{
+background-color:blue;
+position:fixed;
+bottom:-325px;
+right:30px;
+width:200px;
+height:350px;
+color:blue;
+border-style: solid;
+border-color:black;
+border-width: 3px;
+float:right;
+}

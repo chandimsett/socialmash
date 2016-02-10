@@ -1,0 +1,90 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400);
+.chat .users, .chat .chatbox{
+ display:inline-block;
+ vertical-align:top;
+ height:350px;
+ padding:0px 15px;
+ position:relative;
+font-family: raleway;
+
+}
+.chat .users{
+ background:#CCC;
+ color:white;
+ width:98px;
+ overflow-y:auto;
+font-family: raleway;
+
+}
+.chat .chatbox{
+ background:#fff;
+ color:black;
+ margin-left:4px;
+ width:330px;
+font-family: raleway;
+background-color: orange;
+}
+.chat .chatbox .msgs{
+border-top:1px solid black;
+border-bottom:1px solid black;
+ overflow-y:auto;
+ height:260px;
+font-family: raleway;
+}
+.chat .chatbox #msg_form{
+ padding-top:1.5px;
+font-family: raleway;
+}
+.chat .error{color:red;}
+.chat .success{color:green;}
+.chat .msgs .msg, .chat .users .user{
+//border-bottom:1px solid black;
+padding:4px 0px;
+white-space:pre-line;
+word-break:break-word;
+font-family: raleway;
+}
+.yourname{
+background: rgb(242,242,247); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(242,242,247,1) 1%, rgba(216,208,239,1) 55%, rgba(206,199,236,1) 81%, rgba(193,191,234,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(1%,rgba(242,242,247,1)), color-stop(55%,rgba(216,208,239,1)), color-stop(81%,rgba(206,199,236,1)), color-stop(100%,rgba(193,191,234,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(242,242,247,1) 1%,rgba(216,208,239,1) 55%,rgba(206,199,236,1) 81%,rgba(193,191,234,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(242,242,247,1) 1%,rgba(216,208,239,1) 55%,rgba(206,199,236,1) 81%,rgba(193,191,234,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(242,242,247,1) 1%,rgba(216,208,239,1) 55%,rgba(206,199,236,1) 81%,rgba(193,191,234,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(242,242,247,1) 1%,rgba(216,208,239,1) 55%,rgba(206,199,236,1) 81%,rgba(193,191,234,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f7', endColorstr='#c1bfea',GradientType=1 ); /* IE6-9 */
+
+padding-top:4px;
+padding-bottom:4px;
+display:inline-block;
+margin-top:1px;
+margin-bottom:1px;
+padding-left:2px;
+padding-right:2px;
+text-align:right;
+}
+.frndname{
+background: rgb(193,191,234); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(193,191,234,1) 0%, rgba(193,191,234,1) 0%, rgba(206,199,236,1) 20%, rgba(216,208,239,1) 42%, rgba(244,244,244,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(193,191,234,1)), color-stop(0%,rgba(193,191,234,1)), color-stop(20%,rgba(206,199,236,1)), color-stop(42%,rgba(216,208,239,1)), color-stop(100%,rgba(244,244,244,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(193,191,234,1) 0%,rgba(193,191,234,1) 0%,rgba(206,199,236,1) 20%,rgba(216,208,239,1) 42%,rgba(244,244,244,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(193,191,234,1) 0%,rgba(193,191,234,1) 0%,rgba(206,199,236,1) 20%,rgba(216,208,239,1) 42%,rgba(244,244,244,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(193,191,234,1) 0%,rgba(193,191,234,1) 0%,rgba(206,199,236,1) 20%,rgba(216,208,239,1) 42%,rgba(244,244,244,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(193,191,234,1) 0%,rgba(193,191,234,1) 0%,rgba(206,199,236,1) 20%,rgba(216,208,239,1) 42%,rgba(244,244,244,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1bfea', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 */
+
+padding-top:4px;
+padding-bottom:4px;
+display:inline-block;
+margin-top:1px;
+margin-bottom:1px;
+padding-left:5px;
+padding-right:5px;
+text-align:left;
+}
+.name{
+font-weight: bold;
+}
+body{
+background-color: teal;
+}

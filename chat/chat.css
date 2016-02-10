@@ -1,0 +1,100 @@
+@import url(../fonts/raleway.chs);
+.chat .users, .chat .chatbox{
+ display:inline-block;
+ vertical-align:top;
+ height:350px;
+ padding:0px 15px;
+ position:relative;
+font-family: raleway;
+
+}
+.chat .users{
+ background:#CCC;
+ color:white;
+ width:98px;
+ overflow-y:auto;
+font-family: raleway;
+
+}
+.chat .chatbox{
+ background:#fff;
+ color:black;
+ margin-left:4px;
+ width:330px;
+font-family: raleway;
+background-color: orange;
+}
+.chat .chatbox .msgs{
+border-top:1px solid black;
+border-bottom:1px solid black;
+ overflow-y:auto;
+ height:260px;
+font-family: raleway;
+}
+.chat .chatbox #msg_form{
+ padding-top:1.5px;
+font-family: raleway;
+}
+.chat .error{color:red;}
+.chat .success{color:green;}
+.chat .msgs .msg, .chat .users .user{
+//border-bottom:1px solid black;
+padding:4px 0px;
+white-space:pre-line;
+word-break:break-word;
+font-family: raleway;
+}
+  .yourname {
+
+	position: relative;
+	padding-top:4px;
+	padding-bottom:4px;
+	display:inline-block;
+	margin-top:1px;
+	margin-bottom:1px;
+	padding-left:5px;
+	padding-right:5px;
+	text-align:left;
+	
+    	background: #4B8F29;
+
+   	/*-webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+   	border-radius: 5px;*/
+
+        -webkit-box-shadow: -5px 4px 10px 0px #616161;
+    -moz-box-shadow: -5px 4px 10px 0px #616161;
+    box-shadow: -5px 4px 10px 0px #616161;
+} 
+
+  .frndname {
+        position: relative;
+	padding-top:4px;
+	padding-bottom:4px;
+	display:inline-block;
+	margin-top:1px;
+	margin-bottom:1px;
+	padding-left:5px;
+	padding-right:5px;
+	text-align:left;
+      background: #AD1D24;
+
+    -webkit-box-shadow: 5px 4px 10px 0px #616161;
+    -moz-box-shadow: 5px 4px 10px 0px #616161;
+    box-shadow: 5px 4px 10px 0px #616161;
+}
+
+
+
+
+
+
+
+.name{
+font-weight: bold;
+color: white;
+}
+.msgc{
+color: white;
+}
+

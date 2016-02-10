@@ -1,0 +1,55 @@
+<html>
+<script src="../code/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#one").show(500);
+	$("#two").hide("slow");
+	$("#three").hide("slow");
+	$("#link1").click(function(){
+		$("#one").fadeIn(500,function(){
+			$("#two").fadeOut("slow");
+		    $("#three").fadeOut("slow");			
+			});
+		
+	});
+	$("#link2").click(function(){
+		
+		$("#two").fadeIn(500,function(){
+			$("#one").fadeOut("slow");
+			$("#three").fadeOut("slow");
+			});
+		
+	});
+	$("#link3").click(function(){
+		
+		$("#three").fadeIn(500,function(){
+			$("#one").fadeOut("slow");
+		    $("#two").fadeOut("slow");
+			});
+	});
+});
+</script>
+<style>
+#one{
+	width:100px;height:100px;background-color:red;display:block;
+	}
+#two{
+	width:100px;height:100px;background-color:blue;display:block;
+}
+#three{
+	width:100px;height:100px;background-color:green;display:block;
+	}
+</style>
+<a href="#" id="link1">1</a>
+<a href="#" id="link2">2</a>
+<a href="#" id="link3">3</a>
+<div id="one" >
+asdfghjkkjjkhjjjk
+</div>
+<div id="two">
+qwertyuiop
+</div>
+<div id="three">
+jkghjkjcgnncg
+</div>
+</html>

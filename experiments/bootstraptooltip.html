@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Tooltip</title>
+<link rel="stylesheet" href="../code/bootstrap.min.css">
+
+<script src="../code/jquery.min.js"></script>
+<script src="../code/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+var originalLeave = $.fn.popover.Constructor.prototype.leave;
+$.fn.popover.Constructor.prototype.leave = function(obj){
+  var self = obj instanceof this.constructor ?
+    obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
+  var container, timeout;
+
+  originalLeave.call(this, obj);
+
+  if(obj.currentTarget) {
+    container = $(obj.currentTarget).siblings('.popover')
+    timeout = self.timeout;
+    container.one('mouseenter', function(){
+      //We entered the actual popover – call off the dogs
+      clearTimeout(timeout);
+      //Let's monitor popover content instead
+      container.one('mouseleave', function(){
+        $.fn.popover.Constructor.prototype.leave.call(self, self);
+      });
+    })
+  }
+};
+
+$('body').popover(
+{  selector: '[data-popover]',
+   trigger: 'hover',
+   placement: 'auto',
+   delay:
+   {show: 50, hide: 400},
+   
+ });
+
+$('.dynamictooltip').hover(function(){
+	var contentDivElement = "#content-"+$(this).attr("id");
+	
+	$.ajax({
+			type: "GET",
+			url: "../search-hint.php",
+			data: "q=shi",
+			success: function(response){
+				$(contentDivElement).html(response);				
+			}
+	});	
+	
+	
+});
+
+});
+
+
+</script>
+<style type="text/css">
+	.dropdown{
+    	border-radius:0px;
+    }
+	
+  }
+</style>
+</head>
+<body>
+<p id='container'>
+<button class='btn btn-primary btn-large' data-popover="true" data-html=true data-content="<a href='http://www.wojt.eu' target='blank' >click me, I'll try not to disappear</a>">hover here</button>
+</p>
+
+<a style="margin-left:200px;" href="#" id="12345" class="dynamictooltip" data-popover="true" data-html=true data-content="<div id='content-12345'>...</div>">blablajjhkhkjk</a>
+<a style="margin-left:200px;" href="#" id="12346" class="dynamictooltip" data-popover="true" data-html=true data-content="<div id='content-12346'>...</div>">blablajjhkhkjk</a>
+
+
+
+<span class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </span>
+</div>
+</body>
+</html>                                		

@@ -1,0 +1,45 @@
+<html>
+<head>
+
+<style type="text/css">
+
+    #myToolTip { display: none;background-color:blue; }
+	.hoverAble{background-color:red;display:inline-block;}
+
+</style>
+<script src="../code/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../code/bootstrap.min.css">
+  <script src="code/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+    $('.hoverAble').mouseenter(function(){
+        var tip = $(this).attr('data');
+        $('#myToolTip').html(tip).fadeIn();
+    });
+	 $('#myToolTip').mouseenter(function(){
+       // var tip = $(this).attr('data');
+        $('#myToolTip').show();
+    });
+	  $('.hoverAble').mouseleave(function(){
+          $('#myToolTip').fadeOut();
+    });
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+});
+</script>
+</head>
+<body>
+
+<div id="myToolTip"></div>
+
+<div class="hoverAble" data="<br>I am good at code</b>">mmm</div>
+<br>
+<br>
+<div class="hoverAble" data="<br>Hi there</b>">mmm</div>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+</body>
+</html>

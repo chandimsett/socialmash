@@ -1,0 +1,112 @@
+create table account(
+userId int auto_increment not null primary key,
+fName varchar(255),
+lName varchar(255),
+email varchar(255),
+pwd varchar(255),
+dob date,
+other int
+);
+
+create table relations(
+rId int auto_increment not null primary key,
+uId int, 
+fId int, 
+relation varchar(100),
+foreign key(uid) references account(userId),
+foreign key(fid) references account(userId)
+);
+
+create table images(
+imageId BIGINT UNSIGNED auto_increment unique not null primary key,
+uId int, -- uploaders user id
+format VARCHAR(255), -- extension of the image
+type VARCHAR(100), -- type of the image uploaded, post profile pic images etc
+title VARCHAR(500),-- image title
+description VARCHAR(1000),-- text associated with the image
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+foreign key(uid) references account(userId)
+);
+
+create table account_info(
+infId int auto_increment not null primary key,
+about varchar(255),
+interests varchar(255),
+work varchar(255),
+lives varchar(255),
+uId int,
+last_seen TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+foreign key(uId) references account(userId)
+);
+
+create table conversations(
+cId BIGINT UNSIGNED auto_increment unique not null primary key,
+uId INT, -- sender
+receiverId INT, -- receiver id
+otherObjectId BIGINT UNSIGNED,-- images/media external ids of the object
+content TEXT,-- content of the message
+type VARCHAR(20),-- text message
+status VARCHAR(10),-- message read/not (unused)
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+foreign key(uId) references account(userId),
+foreign key(receiverId) references account(userId)
+);
+
+create table notifications(
+nId BIGINT UNSIGNED auto_increment unique not null primary key,
+uID INT, -- user id of triggerer
+subjectId INT,-- user id of the person who has recieved the notification
+objectId INT,-- id of the object that is triggering the notification (bigint) edit
+description VARCHAR(100),-- notification text
+type VARCHAR(20),-- type of notification- messages inbox/general notification post,image post debate
+status VARCHAR(10),-- read/unread
+activity VARCHAR(20),
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+foreign key(uId) references account(userId),
+foreign key(subjectId) references account(userId)
+);
+
+create table post(
+pId BIGINT UNSIGNED auto_increment unique not null primary key,
+content TEXT, -- content of the post
+uId INT, -- uploaders User Id
+otherObjectId BIGINT, -- an image post/media post
+type VARCHAR(20),-- type of post, image debate simplepost Q/A
+category VARCHAR(50),-- category of the post
+privacy VARCHAR(20),-- public/followers/friends/community-id
+shares Int,
+title VARCHAR(100),
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+foreign key(uId) references account(userId)
+);
+
+create table comment(
+cId BIGINT UNSIGNED auto_increment unique not null primary key,
+content TEXT, -- content of the comment
+uId INT,-- userId of the commentetor
+otherObjectId BIGINT, -- pic/sticker/media based comment
+pId BIGINT unsigned,
+type VARCHAR(20),-- type of comment debating for/against or reply of a comment or answer of a question
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+foreign key(uId) references account(userId),
+foreign key(pId) references account(post)
+);
+
+create table rating(
+rId BIGINT UNSIGNED auto_increment unique not null primary key,
+uId INT,
+target_type VARCHAR(20), -- TARGET TYPE OBJECT SPECIFICATION
+targetObjectId INT,-- target post/image/comment ID
+type VARCHAR(20),-- rating based on the target type object
+data VARCHAR(50),-- five stars upvote/ downvote other kind of rating activity
+foreign key(uId) references account(userId)
+);
+
+create table hashtag(
+tag varchar(200),
+pId BIGINT UNSIGNED, -- reffering post tag
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+primary key(tag,pId),
+foreign key(pId) references post(pId)
+);
+SELECT tag,count(*) as frequency FROM hashtag group by tag order by frequency desc limit 0,10

@@ -1,0 +1,83 @@
+<html>
+<script src="../code/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#sidebar").hide();	
+	$("#backdrop").hide();
+	
+	$("#link").click(function(){
+		$("#sidebar").animate({width: 'toggle'});
+		$("#backdrop").toggle(200);
+		$(this).text(function(i, v){
+				if(v==='O')
+				{
+					$(this).css("color","white");
+					$("#action").css("z-index","10000");
+					return 'X';
+				}
+				else
+				{
+					$(this).css("color","black");
+					return 'O';
+				}               
+			   
+            })
+	});
+});
+</script>
+<style>
+#action{
+	z-index:501;
+	position:fixed;
+	}
+#sidebar{
+	height:100%;
+	background-color:teal;
+	display:inline-block;
+	z-index:500;
+	position: fixed;
+	left:0px;
+	top:0px;
+	padding:5px;
+	color:white;
+	}
+#backdrop{
+	background-color:black;
+	opacity:0.4;
+	height:100%;
+	width:100%;
+	z-index:499;
+	margin-top:-10px;
+	position:fixed;
+	}
+</style>
+<div id="action"><a href="#" id="link">O</a></div>
+<div id="backdrop"></div>
+<div id="sidebar" >
+  <p>&nbsp;</p>
+  <p>asdfghjkkjjkhjjjk </p>
+</div>
+<p>klll hbjbjbjjjjjjjjdfdfdfd f df df df df df dfd f df df d fd fd ff df df d fd f df d fd fdf df d fd f dfd ffdf df dfd fdfdf </p>
+<p>;</p>
+<p>;;;kk</p>
+<p>kks</p>
+<p>s</p>
+<p>df</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>s</p>
+<p>ds</p>
+<p>ds</p>
+<p>ds</p>
+<p>ds</p>
+<p>ds</p>
+<p>ds</p>
+<p>ds</p>
+<p>&nbsp;</p>
+
+</html>
